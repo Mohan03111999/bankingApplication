@@ -13,4 +13,17 @@ public class CentralizedExceptionHandler {
     public String customerNotfound(CustomerNotFound e){
         return e.getMessage();
     }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(AccountNotFound.class)
+    public String accountNotFound(AccountNotFound e){
+        return e.getMessage();
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(InsufficientBalance.class)
+    public String insufficientBalance(InsufficientBalance e){
+        return e.getMessage();
+    }
+
 }
